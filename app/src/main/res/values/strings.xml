@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">jobplanet</string>
+    <string name="dummy_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="salary_avg">평균연봉 %1$s 만원</string>
+    <string name="interview_title">면접질문</string>
+    <string name="more_review_title">기업리뷰 더보기</string>
+    <string name="more_info_title">기업정보 더보기</string>
+    <string name="pros_title">장점</string>
+    <string name="cons_title">단점</string>
+
+    <string name="info_title">기업정보 상세</string>
+    <string name="review_title">리뷰 상세</string>
+    <string name="create_date">작성 일자 : %1$s</string>
+    <string name="interview_difficulty_title">면접 난이도</string>
+    <string name="search_title">검색어를 입력하세요.</string>
+</resources>

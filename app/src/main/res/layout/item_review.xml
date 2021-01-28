@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="review"
+            type="com.cgkim.jobplanet.model.CellTypeReview" />
+
+        <variable
+            name="handler"
+            type="com.cgkim.jobplanet.extension.ClickHandler" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            layout="@layout/cell_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            bind:industryName="@{review.industry_name}"
+            bind:logoPath="@{review.logo_path}"
+            bind:name="@{review.name}"
+            bind:rateTotalAvg="@{String.valueOf(review.rate_total_avg)}" />
+
+        <TextView
+            android:id="@+id/review_summary"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@{review.review_summary}"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:visibility="@{!TextUtils.isEmpty(review.review_summary) ? View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            tools:text="@string/dummy_text"
+            tools:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/pros_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/pros_title"
+            android:textColor="@android:color/holo_blue_dark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/review_summary" />
+
+        <TextView
+            android:id="@+id/pros"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@{review.pros}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/pros_title"
+            app:layout_constraintTop_toTopOf="@+id/pros_title" />
+
+        <TextView
+            android:id="@+id/cons_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/cons_title"
+            android:textColor="@android:color/holo_red_dark"
+            app:layout_constraintStart_toStartOf="@+id/pros_title"
+            app:layout_constraintTop_toBottomOf="@+id/pros" />
+
+        <TextView
+            android:id="@+id/cons"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{review.cons}"
+            app:layout_constraintEnd_toEndOf="@+id/pros"
+            app:layout_constraintStart_toStartOf="@+id/pros"
+            app:layout_constraintTop_toTopOf="@+id/cons_title" />
+
+        <include
+            layout="@layout/item_bottom"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cons"
+            bind:handler="@{handler}"
+            bind:review="@{review}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
