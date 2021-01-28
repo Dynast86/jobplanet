@@ -1,17 +1,12 @@
 package com.cgkim.jobplanet.ui.adapter
 
 import android.view.ViewGroup
-import android.widget.SearchView
-import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.cgkim.jobplanet.R
 import com.cgkim.jobplanet.data.ItemsModel
 import com.cgkim.jobplanet.ui.vh.CompanyViewHolder
 import com.cgkim.jobplanet.ui.vh.HorizontalViewHolder
 import com.cgkim.jobplanet.ui.vh.ReviewViewHolder
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class MyListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
