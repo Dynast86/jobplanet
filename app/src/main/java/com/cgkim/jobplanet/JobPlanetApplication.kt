@@ -19,7 +19,7 @@ import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class jobPlanetApplication : Application() {
+class JobPlanetApplication : Application() {
 
     companion object {
         const val BASE_URL = "https://jpassets.jobplanet.co.kr"
@@ -54,7 +54,7 @@ class jobPlanetApplication : Application() {
         // 의존성 주입
         // 해당 모듈은 상단(myModule)에서 생성
         startKoin {
-            androidContext(this@jobPlanetApplication)
+            androidContext(this@JobPlanetApplication)
             modules(myModule)
         }
     }
